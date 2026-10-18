@@ -5,20 +5,20 @@
 //*********************************************
 
 void llpivot(Node *&head, Node *&smaller, Node *&larger, int pivot) {
-    if (head == NULL) { //base case
+    if (head == NULL) { 
         smaller = NULL;
         larger = NULL;
         return;
     }
     
-    llpivot(head->next, smaller, larger, pivot); //recurse first bc attach after, or garbage
+    llpivot(head->next, smaller, larger, pivot);
     if (head->val <= pivot) {
-        head->next = smaller; //node points old front of smaller
-        smaller = head; //smaller starts at node
+        head->next = smaller;
+        smaller = head; 
     }
     else {
-        head->next = larger; //same but to larger
+        head->next = larger;
         larger = head;
     }
-    head = NULL; //reset node bc already sorted
+    head = NULL;
 }
