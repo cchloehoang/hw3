@@ -17,7 +17,7 @@ void llpivot(Node *&head, Node *&smaller, Node *&larger, int pivot) {
         smaller = head; //smaller starts at node
     }
     else {
-        head->next = larger; //same but for larger
+        head->next = larger; //same but to larger
         larger = head;
     }
     head = NULL; //reset node bc already sorted
